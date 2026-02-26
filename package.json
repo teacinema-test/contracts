@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Protobuf definitions and generated TypeScript types",
   "scripts": {
-    "generate": "protoc -I proto --plugin=protoc-gen-ts_proto=node_modules\\.bin\\protoc-gen-ts_proto.cmd --ts_proto_out=gen --ts_proto_opt=nestJs=true,package=omit proto\\*.proto"
+    "generate:win": "protoc -I proto --plugin=protoc-gen-ts_proto=node_modules\\.bin\\protoc-gen-ts_proto.cmd --ts_proto_out=gen --ts_proto_opt=nestJs=true,package=omit proto\\*.proto",
+    "generate:unix": "protoc -I proto --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=gen --ts_proto_opt=nestJs=true,package=omit proto/*.proto"
   },
   "files": [
     "proto",

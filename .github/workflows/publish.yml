@@ -26,7 +26,7 @@ jobs:
         run: npm install --frozen-lockfile
 
       - name: Generate TS Protobuf
-        run: npm run generate
+        run: npm run generate:unix
 
       - name: Publish package
         run: npm publish
