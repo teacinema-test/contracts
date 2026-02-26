@@ -3,7 +3,7 @@ syntax = "proto3";
 package auth.v1;
 
 service AuthService {
-  rpc SendOTP (SendOtpRequest) returns (SendOtpResponse);
+  rpc SendOtp (SendOtpRequest) returns (SendOtpResponse);
 }
 
 message SendOtpRequest {
