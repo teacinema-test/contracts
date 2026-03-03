@@ -1,8 +1,11 @@
 {
   "name": "@teacinema-test/contracts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Protobuf definitions and generated TypeScript types",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "build": "tsc -p tsconfig.build.json",
     "generate:win": "protoc -I proto --plugin=protoc-gen-ts_proto=node_modules\\.bin\\protoc-gen-ts_proto.cmd --ts_proto_out=gen --ts_proto_opt=nestJs=true,package=omit proto\\*.proto",
     "generate:unix": "protoc -I proto --plugin=protoc-gen-ts_proto=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=gen --ts_proto_opt=nestJs=true,package=omit proto/*.proto"
   },
@@ -11,8 +14,10 @@
     "gen"
   ],
   "devDependencies": {
+    "@types/node": "^25.3.3",
     "grpc-tools": "^1.13.1",
-    "ts-proto": "^2.11.2"
+    "ts-proto": "^2.11.2",
+    "typescript": "^5.9.3"
   },
   "publishConfig": {
     "access": "public"
